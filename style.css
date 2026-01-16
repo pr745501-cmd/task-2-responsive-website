@@ -1,3 +1,4 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -5,17 +6,24 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    background-color: #0a3cff;
-    color: white;
+    padding: 16px 50px;
+    background: linear-gradient(90deg, #020a2b, #0a3cff);
+    color: #fff;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 nav ul {
@@ -24,58 +32,108 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-/* HEADER */
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+/* ================= HEADER ================= */
 header {
     text-align: center;
-    padding: 60px 20px;
-    background: #f4f4f4;
+    padding: 80px 20px;
+    background: #eef1ff;
 }
 
-/* ABOUT */
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* ================= ABOUT ================= */
 .about {
-    padding: 40px;
+    padding: 60px 20px;
     text-align: center;
+    background: #fff;
 }
 
-/* SERVICES (GRID) */
+.about h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+    color: #666;
+}
+
+/* ================= SERVICES (GRID) ================= */
 .services {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 40px;
+    gap: 25px;
+    padding: 60px 40px;
 }
 
 .card {
     background: #0a3cff;
-    color: white;
-    padding: 30px;
+    color: #fff;
+    padding: 35px 20px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 12px;
+    font-size: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* FOOTER */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ================= FOOTER ================= */
 footer {
     text-align: center;
-    padding: 15px;
-    background: #222;
-    color: white;
+    padding: 20px;
+    background: #020a2b;
+    color: #fff;
+    font-size: 14px;
 }
 
-/* RESPONSIVE */
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .services {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
     }
 
+    nav ul {
+        margin-top: 10px;
+    }
+
     .services {
         grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 28px;
     }
 }
